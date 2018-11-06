@@ -10,7 +10,7 @@ import Link from './Link';
 import Wrapper from './Wrapper';
 
 function Header({ config }) {
-  const { author, description, social } = config;
+  const { author, description, social, topnav } = config;
 
   return (
     <Container>
@@ -28,8 +28,12 @@ function Header({ config }) {
             linkedin={social.linkedin}
           />
         }
+        {topnav &&
+          <p><Link style={{marginRight: '50px'}} to={topnav.link1.linkto}>{topnav.link1.label}</Link><Link style={{marginRight: '50px'}} to={topnav.link2.linkto}>{topnav.link2.label}</Link>&nbsp;&nbsp;<Link style={{marginRight: '50px'}} to={topnav.link3.linkto}>{topnav.link3.label}</Link></p>
+        }
+
       </Wrapper>
-    </Container> 
+    </Container>
   );
 }
 
